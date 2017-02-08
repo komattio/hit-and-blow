@@ -2,8 +2,8 @@ def getInput()
   inputNum = gets.chomp
   inputAry = inputNum.chars
   
-  if(inputAry.size != 3)
-    puts "Input exceeds 3 digits."
+  if(inputAry.size != DIGITS)
+    puts "Input exceeds #{DIGITS} digits."
   end
 
   chk = inputAry.size - inputAry.uniq.size
@@ -14,6 +14,7 @@ def getInput()
   return inputAry
 end
 
+DIGITS = 3
 ANS = 365
 ansAry = ANS.to_s.chars
 inputCnt = 1
@@ -21,7 +22,7 @@ inputCnt = 1
 while inputCnt <= 10 do
   puts "#{inputCnt}:"
   inputAry = []
-  while inputAry.size != 3 do
+  while inputAry.size != DIGITS do
     inputAry = getInput()
   end
   
